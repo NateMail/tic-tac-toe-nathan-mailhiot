@@ -13,7 +13,6 @@ let gameOver = false
 const gameFinished = function () {
   if (gameOver === true) {
     $('.gameboard').hide()
-    $('.mess').hide(5000)
   }
 }
 
@@ -23,6 +22,8 @@ const onNewGame = function (event) {
   $('.square').text('')
   // resets the win or tie message to be blank
   $('#winOrTie').text('')
+  // shows messagebox
+  $('.mess').show()
   // sets game over status back to false
   gameOver = false
   // clears the board array
@@ -35,8 +36,6 @@ const onNewGame = function (event) {
   currentPlayer = 'o'
   // resets whose turn it is so it starts with x
   turn()
-  // shows the message box
-  $('.mess').show()
 }
 
 // turn
@@ -106,7 +105,7 @@ const onClickbox = function (event) {
 // passing my functions to my app file
 const addEventHandler = function () {
   $('.square').on('click', onClickbox)
-  $('.newGame').on('click', onNewGame)
+  $('#newG').on('click', onNewGame)
 }
 
 module.exports = {
