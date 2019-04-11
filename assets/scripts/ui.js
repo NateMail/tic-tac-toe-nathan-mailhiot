@@ -21,6 +21,9 @@ const getSuccess = function (response) {
   // prints the message to the player
   $('#numberOfGames').text(`The number of games you have played is ${gamesPlayed}`)
   $('#numberOfGames').show()
+  setTimeout(function () {
+    $('#numberOfGames').text('')
+  }, 5000)
 }
 
 module.exports = {
