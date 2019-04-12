@@ -1,18 +1,23 @@
 const store = require('./../store.js')
-// const eventr = require('./../events.js')
 
 const signUpSuccess = function (data) {
   $('.up').show()
   // sign up message successful
   $('.up').text('You successfully signed up!')
   // sign up message hidden
-  $('.up').hide(3000)
+  setTimeout(function () {
+    $('.up').text('')
+  }, 2000)
   // resets the form
   $('form').trigger('reset')
 }
 
 const signUpFailure = function (data) {
+  $('.up').show()
   $('.up').text('Something went wrong. Try again!')
+  setTimeout(function () {
+    $('.up').text('')
+  }, 2000)
   $('form').trigger('reset')
 }
 
@@ -29,8 +34,10 @@ const signInSuccess = function (data) {
   $('#sign-out').removeClass('signingOut')
   // new game button class is removed and the button is revealed
   $('#newG').removeClass('newGame')
+  $('#newG').show()
   // game stats button class is removed and button is revealed
   $('#gS').removeClass('gameStats')
+  $('#gS').show()
   // change password class is removed and it is revealed
   $('#change-password').removeClass('passwordChange')
   // to show the button after sign out has been used
@@ -43,8 +50,6 @@ const signInSuccess = function (data) {
   $('#sign-out').show()
   // resetting the form
   $('form').trigger('reset')
-  // starts a new game
-  // eventr.onNewGame()
 }
 
 const signInFailure = function (data) {
@@ -94,6 +99,10 @@ const signOutSuccess = function () {
   $('.change').hide()
   // hides messagebox
   $('.mess').hide()
+  // hides buttons
+  $('#newG').hide()
+  $('#gS').hide()
+
   store.user = null
 }
 
