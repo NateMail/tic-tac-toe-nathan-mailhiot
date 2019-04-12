@@ -62,9 +62,15 @@ const gameState = function () {
     (ticBoard[2] === ticBoard[5] && ticBoard[5] === ticBoard[8] && ticBoard[2]) === currentPlayer) {
     gameOver = true
     $('#winOrTie').text(`${currentPlayer} wins!`)
+    setTimeout(function () {
+      $('#message').text('')
+    }, 5)
   } else if (ticBoard.every(index => index !== '')) {
     gameOver = true
     $('#winOrTie').text('It is a tie!')
+    setTimeout(function () {
+      $('#message').text('')
+    }, 5)
   }
 }
 
