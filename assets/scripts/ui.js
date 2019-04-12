@@ -4,7 +4,10 @@ const onSuccessCreate = function (data) {
   store.game = data.game
 }
 const onFailureCreate = function (data) {
-
+  $('.mess').text('Something went wrong the board could not be created.')
+  setTimeout(function () {
+    $('.mess').text('')
+  }, 3000)
 }
 
 const onBoardUpdateSuccess = function (data) {

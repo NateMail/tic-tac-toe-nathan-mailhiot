@@ -87,7 +87,7 @@ const signOutSuccess = function () {
   // hides sign out
   $('#sign-out').hide()
   // hides the board
-  $('.hideboard').hide()
+  $('.gameboard').hide()
   // hides the number of games played on sign out
   $('#numberOfGames').hide()
   // hides password change
