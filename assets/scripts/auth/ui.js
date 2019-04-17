@@ -55,6 +55,9 @@ const signInSuccess = function (data) {
 const signInFailure = function (data) {
   $('.login').show()
   $('.login').text('Something went wrong try again.')
+  setTimeout(function () {
+    $('.login').text('')
+  }, 2000)
   $('form').trigger('reset')
 }
 
@@ -108,6 +111,9 @@ const signOutSuccess = function () {
 
 const signOutFailure = function () {
   $('.out').text('Sign out failed, try again.')
+  setTimeout(function () {
+    $('.out').text('')
+  }, 2000)
   $('form').trigger('reset')
 }
 
