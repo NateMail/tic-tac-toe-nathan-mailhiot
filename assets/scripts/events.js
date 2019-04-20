@@ -63,11 +63,13 @@ const gameState = function () {
     gameOver = true
     $('#winOrTie').text(`${currentPlayer} wins!`)
     setTimeout(function () {
+      // times out the turn message
       $('#message').text('')
     }, 5)
   } else if (ticBoard.every(index => index !== '')) {
     gameOver = true
     $('#winOrTie').text('It is a tie!')
+    // times out the turn message
     setTimeout(function () {
       $('#message').text('')
     }, 5)
